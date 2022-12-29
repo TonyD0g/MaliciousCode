@@ -1,0 +1,25 @@
+新增节 (xp 系统下)：
+
+0.S为1000h
+
+1.复制 .text节到节表末尾,改名字为.tttt (名字是随意取的)
+
+2.修改 之前最后一个节的 VirualSize 和 SizeOfRawData 改为内存对齐后的大小,这里为1000
+
+3.修改 .tttt节的 virtualSize 和 SizeOfRawData 为我们想要的大小,即1000,依旧是已经内存对齐后
+
+4.新增加节的VirtualAddress = 上一个节内存对齐后的大小+上一个节.VirtualAddress
+
+新增加节的VirtualAddress = 1000 + 113000 = 114000
+
+5.sizeOfImage  = sizeOfImage + S 
+               = 114000 + 1000 = 115000
+
+6.先删除第一个节前面的40个字节（先看节表后有没有对齐，没对齐再删除,因为前面新增加了一个节表，数据全部往后推移了40个字节）
+
+7.UE编辑器拉到最后,右键插入我们所新增节的数据大小,即1000h
+
+
+
+26个字母:
+a b c d e f g h i j k l m n o p q r s t u v w x y z

@@ -1,0 +1,22 @@
+扩大节 (xp 系统下)：
+
+节表结构体中:
+
+SizeOfRawData : 400
+VirtualSize : 3a8
+
+所以选 SizeOfRawData,我这里添加的S空间为1000h
+
+n = (400 -> 1000) + 1000 = 2000
+
+所以
+SizeOfRawData , VirtualSize改为 2000
+
+ 修改 `SizeOfImage` 大小 :
+ SizeOfImage = SizeOfImage + S
+
+UE编辑器来到末尾，右键插入S空间
+
+
+26个字母:
+a b c d e f g h i j k l m n o p q r s t u v w x y z
